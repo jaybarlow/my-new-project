@@ -1,20 +1,22 @@
+import Link from 'next/link'
+
 export default function Navbar() {
   return (
     <header className="w-full bg-gray-900 text-white">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold">
           MyProject
-        </div>
+        </Link>
         <div className="flex gap-6">
-          <a href="#home" className="hover:text-gray-300 transition-colors">
+          <Link href="/" className="hover:text-gray-300 transition-colors">
             Home
-          </a>
-          <a href="#features" className="hover:text-gray-300 transition-colors">
+          </Link>
+          <Link href="/features" className="hover:text-gray-300 transition-colors">
             Features
-          </a>
-          <a href="#pricing" className="hover:text-gray-300 transition-colors">
+          </Link>
+          <Link href="/pricing" className="hover:text-gray-300 transition-colors">
             Pricing
-          </a>
+          </Link>
         </div>
       </nav>
     </header>
