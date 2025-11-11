@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col">
       <Navbar />
       <section className="flex flex-col items-center justify-center text-center px-6 py-20">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
