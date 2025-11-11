@@ -1,0 +1,43 @@
+name: CI Check
+
+# Triggers the workflow on push or pull request events for the "main" branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-lint:
+    # Use the latest version of Ubuntu
+    runs-on: ubuntu-latest
+
+    # Set the Node.js version. Use '20.x' for the current LTS.
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+
+    steps:
+      # 1. Get your code
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          # Use npm's cache to speed up 'npm ci'
+          cache: 'npm'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Run the linter
+      - name: Run linter
+        run: npm run lint
+
+      # 5. Run the production build
+      - name: Run build
+        run: npm run build
