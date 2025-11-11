@@ -9,7 +9,7 @@ export default function Home() {
           Welcome to My New Project
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          Build amazing applications with modern tools and technologies. Our platform helps you create, deploy, and scale your projects with ease.
         </p>
       </section>
       <section className="px-6 py-20 w-full max-w-6xl">
