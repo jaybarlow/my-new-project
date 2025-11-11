@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header className="bg-gray-900 text-white">
+    <header className="w-full bg-gray-900 text-white">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
         <div className="text-xl font-bold">
           MyProject
