@@ -9,7 +9,7 @@ interface CardProps {
   glowColor?: 'blue' | 'purple' | 'pink' | 'green';
 }
 
-export default function Card({
+const Card = React.memo(function Card({
   children,
   className = '',
   hover = true,
@@ -40,4 +40,6 @@ export default function Card({
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
     </div>
   );
-}
+});
+
+export default Card;

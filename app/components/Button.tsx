@@ -10,7 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export default function Button({
+const Button = React.memo(function Button({
   children,
   href,
   variant = 'primary',
@@ -47,4 +47,6 @@ export default function Button({
       {children}
     </button>
   );
-}
+});
+
+export default Button;
