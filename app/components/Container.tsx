@@ -6,7 +6,7 @@ interface ContainerProps {
   size?: 'sm' | 'md' | 'lg' | 'full';
 }
 
-export default function Container({ children, className = '', size = 'lg' }: ContainerProps) {
+const Container = React.memo(function Container({ children, className = '', size = 'lg' }: ContainerProps) {
   const sizes = {
     sm: 'max-w-4xl',
     md: 'max-w-6xl',
@@ -19,4 +19,6 @@ export default function Container({ children, className = '', size = 'lg' }: Con
       {children}
     </div>
   );
-}
+});
+
+export default Container;

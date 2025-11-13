@@ -108,31 +108,38 @@ body {
 /* Animation Classes */
 .animate-fade-in {
   animation: fade-in 1s ease-out;
+  will-change: opacity, transform;
 }
 
 .animate-slide-up {
   animation: slide-up 1s ease-out 0.2s both;
+  will-change: opacity, transform;
 }
 
 .animate-slide-in-right {
   animation: slide-in-right 1s ease-out both;
+  will-change: opacity, transform;
 }
 
 .animate-bounce-slow {
   animation: bounce-slow 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
+  will-change: background-position;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+  will-change: box-shadow;
 }
 
 .animate-shimmer {
@@ -144,6 +151,7 @@ body {
   );
   background-size: 1000px 100%;
   animation: shimmer 3s infinite;
+  will-change: background-position;
 }
 
 /* Animation Delays */
@@ -173,6 +181,13 @@ body {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Optimized Blur for decorative elements - reduced blur for better performance */
+.blur-decorative {
+  filter: blur(60px);
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: transform;
 }
 
 /* Gradient Border Effect */
@@ -205,7 +220,9 @@ body {
   display: none;  /* Chrome, Safari and Opera */
 }
 
-/* Smooth Transitions */
-* {
+/* Smooth Transitions - Applied selectively to avoid performance overhead */
+button,
+a,
+.transition {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

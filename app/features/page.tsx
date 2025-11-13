@@ -3,9 +3,13 @@ import Container from '../components/Container';
 import Button from '../components/Button';
 import Navbar from '../components/Navbar';
 
+// Extract repeated SVG pattern to avoid duplication
+const GRID_PATTERN_BG = "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]";
+
 export default function Features() {
   const features = [
     {
+      id: 'lightning-fast',
       icon: '🚀',
       title: 'Lightning Fast',
       description:
@@ -14,6 +18,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'secure-by-default',
       icon: '🔒',
       title: 'Secure by Default',
       description:
@@ -22,6 +27,7 @@ export default function Features() {
       glowColor: 'purple' as const,
     },
     {
+      id: 'mobile-ready',
       icon: '📱',
       title: 'Mobile Ready',
       description:
@@ -30,6 +36,7 @@ export default function Features() {
       glowColor: 'pink' as const,
     },
     {
+      id: 'easy-integration',
       icon: '⚙️',
       title: 'Easy Integration',
       description:
@@ -38,6 +45,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'analytics-builtin',
       icon: '📊',
       title: 'Analytics Built-in',
       description:
@@ -46,6 +54,7 @@ export default function Features() {
       glowColor: 'green' as const,
     },
     {
+      id: 'customizable',
       icon: '🎨',
       title: 'Customizable',
       description:
@@ -54,6 +63,7 @@ export default function Features() {
       glowColor: 'pink' as const,
     },
     {
+      id: 'global-cdn',
       icon: '🌐',
       title: 'Global CDN',
       description:
@@ -62,6 +72,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'auto-updates',
       icon: '🔄',
       title: 'Auto Updates',
       description:
@@ -70,6 +81,7 @@ export default function Features() {
       glowColor: 'purple' as const,
     },
     {
+      id: 'support-24-7',
       icon: '💬',
       title: '24/7 Support',
       description:
@@ -85,9 +97,9 @@ export default function Features() {
 
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 md:py-40 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 overflow-hidden mt-16">
-        {/* Floating Background Elements */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animation-delay-300"></div>
+        {/* Floating Background Elements - Optimized blur for better performance */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply blur-decorative opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply blur-decorative opacity-20 animate-float animation-delay-300"></div>
 
         <Container>
           <div className="relative z-10">
@@ -115,7 +127,7 @@ export default function Features() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card
-                key={index}
+                key={feature.id}
                 gradient
                 glowColor={feature.glowColor}
                 className="animate-fade-in"
@@ -176,7 +188,7 @@ export default function Features() {
 
       {/* CTA Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
+        <div className={`absolute inset-0 ${GRID_PATTERN_BG} opacity-20`}></div>
 
         <Container>
           <div className="relative z-10 text-center max-w-3xl mx-auto text-white">
