@@ -11,10 +11,10 @@ export default function Home() {
 
       {/* Hero Section with Animated Background */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 py-40 md:py-52 w-full overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 animate-gradient mt-16">
-        {/* Floating Decorative Elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-200"></div>
-        <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-400"></div>
+        {/* Floating Decorative Elements - Optimized blur for better performance */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply blur-decorative opacity-30 animate-float"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply blur-decorative opacity-30 animate-float animation-delay-200"></div>
+        <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply blur-decorative opacity-30 animate-float animation-delay-400"></div>
 
         {/* Content */}
         <div className="relative z-10">

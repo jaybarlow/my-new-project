@@ -183,6 +183,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Optimized Blur for decorative elements - reduced blur for better performance */
+.blur-decorative {
+  filter: blur(60px);
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: transform;
+}
+
 /* Gradient Border Effect */
 .gradient-border {
   position: relative;

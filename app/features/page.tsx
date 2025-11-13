@@ -97,9 +97,9 @@ export default function Features() {
 
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 md:py-40 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 overflow-hidden mt-16">
-        {/* Floating Background Elements */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animation-delay-300"></div>
+        {/* Floating Background Elements - Optimized blur for better performance */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply blur-decorative opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply blur-decorative opacity-20 animate-float animation-delay-300"></div>
 
         <Container>
           <div className="relative z-10">
