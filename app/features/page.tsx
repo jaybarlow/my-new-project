@@ -9,6 +9,7 @@ const GRID_PATTERN_BG = "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAi
 export default function Features() {
   const features = [
     {
+      id: 'lightning-fast',
       icon: '🚀',
       title: 'Lightning Fast',
       description:
@@ -17,6 +18,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'secure-by-default',
       icon: '🔒',
       title: 'Secure by Default',
       description:
@@ -25,6 +27,7 @@ export default function Features() {
       glowColor: 'purple' as const,
     },
     {
+      id: 'mobile-ready',
       icon: '📱',
       title: 'Mobile Ready',
       description:
@@ -33,6 +36,7 @@ export default function Features() {
       glowColor: 'pink' as const,
     },
     {
+      id: 'easy-integration',
       icon: '⚙️',
       title: 'Easy Integration',
       description:
@@ -41,6 +45,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'analytics-builtin',
       icon: '📊',
       title: 'Analytics Built-in',
       description:
@@ -49,6 +54,7 @@ export default function Features() {
       glowColor: 'green' as const,
     },
     {
+      id: 'customizable',
       icon: '🎨',
       title: 'Customizable',
       description:
@@ -57,6 +63,7 @@ export default function Features() {
       glowColor: 'pink' as const,
     },
     {
+      id: 'global-cdn',
       icon: '🌐',
       title: 'Global CDN',
       description:
@@ -65,6 +72,7 @@ export default function Features() {
       glowColor: 'blue' as const,
     },
     {
+      id: 'auto-updates',
       icon: '🔄',
       title: 'Auto Updates',
       description:
@@ -73,6 +81,7 @@ export default function Features() {
       glowColor: 'purple' as const,
     },
     {
+      id: 'support-24-7',
       icon: '💬',
       title: '24/7 Support',
       description:
@@ -118,7 +127,7 @@ export default function Features() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card
-                key={index}
+                key={feature.id}
                 gradient
                 glowColor={feature.glowColor}
                 className="animate-fade-in"
